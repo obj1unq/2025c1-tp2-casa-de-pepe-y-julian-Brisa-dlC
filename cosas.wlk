@@ -1,34 +1,41 @@
-object electrodomestico{
+object electrodomestico {
+	method esComestible() = false
 }
 
 object mueble {
+	method esComestible() = false
 }
 
 object comida {
-
+	method esComestible() = true
 }
 
 object heladera {
-	method precio() { return 20000 }
-	method categoria() { return electrodomestico }
+	method precio() = 20000
+	const property categoria = electrodomestico
+	method esComestible() = categoria.esComestible()
 }
 
 object cama {
-	method precio() { return 8000 }
-	method categoria() { return mueble }
+	method precio() = 8000
+	const property categoria = mueble
+	method esComestible() = categoria.esComestible()
 }
 
 object tiraDeAsado {
-	method precio() { return 350 }
-	method categoria() { return comida }
+	method precio() = 350
+	const property categoria = comida
+	method esComestible() = categoria.esComestible()
 }
 
 object paqueteDeFideos {
-	method precio() { return 50 }
-	method categoria() { return comida }
+	method precio() = 50
+	const property categoria = comida
+	method esComestible() = categoria.esComestible()
 }
 
 object plancha {
-	method precio() { return 1200 }
-	method categoria() { return electrodomestico }
+	method precio() = 1200
+	const property categoria = electrodomestico
+	method esComestible() = categoria.esComestible()
 }
